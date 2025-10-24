@@ -6,7 +6,6 @@
   (Kun HTML + CSS – ingen JS.)
 -->
 <html lang="nb">
-<!-- bevisst: mangler lang-attributt på <html> -->
 
 <head>
   <meta charset="utf-8">
@@ -41,28 +40,29 @@
 
   </nav>
   <section class="ticker">
-    <h3>Viktig beskjed: Les dette! Klikk her! Klikk her! Klikk her! Veldig viktig!</h3>
+    <h3>Ler mer her for viktig informasjon ang. eksamen</h3>
   </section>
 
   <aside>
     <section>
       <h4>Nyheter</h4> <!-- bevisst: hopper over h1/h2/h3 -->
-      <p>
+      <article>
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt="">
         <!-- bevisst: tom alt på meningsbærende bilde -->
         <a class="tiny-link" href="#">Klikk her</a> for å lese mer om ting.
-      </p>
+      </article>
       <p class="status-ok">Tilgjengelig</p>
       <p class="status-bad">Utilgjengelig</p>
     </section>
   </aside>
   <section>
     <h4>Språk</h4>
-    <p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Norway.svg" alt="no">
-      <!-- bevisst: alt «no» er ikke beskrivende -->
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_the_United_Kingdom.svg" alt="en">
-    </p>
+    <ul>
+      <li><img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway.svg" alt="Norsk språk"></li>
+      <li><img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="Engelsk språk">
+      </li>
+    </ul>
+
   </section>
 
 
@@ -77,89 +77,91 @@
 
     <section>
 
-        <h4>Kontakt oss</h4>
-        <!-- bevisst: ingen <label> og kun placeholder, dupliserte id-er, dårlig kontrast, farge som eneste signal -->
-        <form>
-          <label>
-            Navn:
-            <input type="text" id="navn" placeholder="Kari Nordmann" required>
-          </label>
+      <h4>Kontakt oss</h4>
+      <!-- bevisst: ingen <label> og kun placeholder, dupliserte id-er, dårlig kontrast, farge som eneste signal -->
+      <form>
+        <label>
+          Navn:
+          <input type="text" id="navn" placeholder="Kari Nordmann" required>
+        </label>
 
-          <label>
-            E-post:
-            <input type="email" id="email" placeholder="navn@hiof.no" required>
-          </label>
+        <label>
+          E-post:
+          <input type="email" id="email" placeholder="navn@hiof.no" required>
+        </label>
 
-          <label>
-            Telefon:
-            <input type="tel" id="phone" placeholder="00 000 00" required>
-          </label>
+        <label>
+          Telefon:
+          <input type="tel" id="phone" placeholder="00 000 00" required>
+        </label>
 
-          <label for="service">Tjeneste</label>
-          <select id="service">
-            <option>Velg tema</option>
-            <option>Bestilling</option>
-            <option>Support</option>
-          </select>
+        <label for="service">Tjeneste</label>
+        <select id="service">
+          <option>Velg tema</option>
+          <option>Bestilling</option>
+          <option>Support</option>
+        </select>
 
-          <label>
-            <textarea rows="3" placeholder="Melding..."></textarea>
-            <p class="help">Felt merket med <span class="required">rød farge</span> er obligatoriske.</p>
-            <p class="error">skjemaet er feil utfylt</p> <!-- bevisst: lav kontrast på feilmelding, små bokstaver -->
-            <button>Send inn</button>
-            <input type="submit" value="Send">
-            <!-- bevisst: span som knapp, positiv tabindex -->
-          </label>
+        <label>
+          <textarea rows="3" placeholder="Melding..."></textarea>
+          <p class="help">Felt merket med <span class="required">rød farge</span> er obligatoriske.</p>
+          <p class="error">skjemaet er feil utfylt</p> <!-- bevisst: lav kontrast på feilmelding, små bokstaver -->
+          <button>Send inn</button>
+          <input type="submit" value="Send">
 
-        </form>
+        </label>
+      </form>
 
-      <div class="card weird-order">
+      <article>
         <h4>Mer innhold</h4>
-        <p>
-          <a href="#" tabindex="3">Les mer</a> |
-          <a href="#" tabindex="1">Klikk her</a> |
-          <a href="#" tabindex="2">Trykk her</a>
-        </p>
-        <p>
-          <span class="btn" tabindex="4">Primær handling</span>
-        </p>
-      </div>
-
-      <div class="card">
+        <ol>
+          <li><a href="#">Les mer om semantikk</a></li>
+          <li><a href="#">Ler mer om button tag</a></li>
+          <li><a href="#">Validator for nettsider</a></li>
+        </ol>
+        <button>Start eksamen</button>
+      </article>
+      <article>
         <h4>Tabell uten overskrifter</h4>
         <table>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>8</td>
-            <td>9</td>
-          </tr>
+          <tbody>
+            <tr>
+              <th>Kolonne 1</th>
+              <th>Kolonne 2</th>
+              <th>Kolonne 3</th>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+            </tr>
+          </tbody>
         </table>
-      </div>
+      </article>
 
-      <div class="card">
+      <article>
         <h4>Masse lenker med samme tekst</h4>
         <ul>
-          <li><a href="#">Les mer</a></li>
-          <li><a href="#">Les mer</a></li>
-          <li><a href="#">Les mer</a></li>
-          <li><a href="#">Les mer</a></li>
+          <li><a href="#">Oppgave om UU</a></li>
+          <li><a href="#">Oppgave om SEO</a></li>
+          <li><a href="#">Oppgave om Semantisk HTML</a></li>
+          <li><a href="#">Oppgave om CSS Grid of flex</a></li>
         </ul>
-      </div>
+      </article>
+
       </td>
     </section>
   </main>
   <footer>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Facebook_icon.svg"
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Facebook_logo_%28square%29.png"
       alt="Facebook ikon for lenke til Facebook">
     <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Twitter_logo.svg"
       alt="Twitter ikon for lenke til Twitter">
